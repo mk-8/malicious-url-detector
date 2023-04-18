@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Malicious URL Detection</title>
+	<!-- Add Bootstrap stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- Add custom CSS -->
+	<style>
+		body {
+			background-color: #f7f7f7;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			font-size: 2.5rem;
+			text-align: center;
+			margin-top: 2rem;
+			margin-bottom: 3rem;
+			color: #333;
+		}
+		.form-container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 2rem;
+			background-color: #fff;
+			border-radius: 1rem;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+		.form-group {
+			margin-bottom: 1.5rem;
+		}
+		.form-control {
+			font-size: 1.2rem;
+			border: 2px solid #ccc;
+			border-radius: 0.5rem;
+			padding: 0.75rem;
+			transition: border-color 0.2s ease-in-out;
+		}
+		.form-control:focus {
+			border-color: #333;
+			box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+		}
+		.btn-primary {
+			background-color: #333;
+			border: none;
+			border-radius: 0.5rem;
+			font-size: 1.2rem;
+			padding: 0.75rem 2rem;
+			transition: background-color 0.2s ease-in-out;
+		}
+		.btn-primary:hover {
+			background-color: #555;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Malicious URL Detection</h1>
+		<div class="form-container">
+			<form method="post" action="/predict">
+				<div class="form-group">
+					<label for="url-input">Enter a URL:</label>
+					<input type="text" class="form-control" id="url-input" name="urlInput" autocomplete="off" required>
+				</div>
+				<button type="submit" class="btn btn-primary">Check</button>
+			</form>
+			{% if result %}
+			<div class="mt-3">
+				<h2>Result:</h2>
+				<p>{{ result }}</p>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	<!-- Add Bootstrap script -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
