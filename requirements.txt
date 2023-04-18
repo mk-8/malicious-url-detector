@@ -47,7 +47,6 @@ pyparsing
 python-dateutil
 python-version
 pytz
-pywin32
 pyzmq
 scikit-learn
 scipy
